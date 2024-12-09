@@ -1,0 +1,38 @@
+.show_Proruct {
+    position: relative;
+    overflow: hidden; /* Đảm bảo phần tử giả không tràn ra ngoài */
+}
+
+.show_Proruct:hover::after {
+    content: " ";
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+    opacity: 1; /* Hiển thị nền mờ */
+    z-index: 1; /* Đặt trên nền nhưng dưới nội dung chính */
+    transition: opacity 0.3s ease;
+    
+}
+
+.show_Proruct:hover .show_hidden {
+    display: flex; /* Hiển thị nội dung ẩn */
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Hiển thị trên lớp nền mờ */
+    color: white; /* Văn bản sáng rõ */
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.show_hidden {
+    display: none; /* Ẩn phần tử mặc định */
+    opacity: 0; /* Đảm bảo mượt mà khi hiển thị */
+}
